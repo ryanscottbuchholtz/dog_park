@@ -14,6 +14,8 @@ describe Owner do
     it { should have_valid(:email_address).when('ryan@monkey.com') }
     it { should_not have_valid(:email_address).when(*invalid_email) }
 
+    it { should have_many(:pets).dependent(:destroy) }
+
   end
 
 

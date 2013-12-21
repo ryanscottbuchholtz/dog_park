@@ -11,6 +11,7 @@ class Owner < ActiveRecord::Base
     inverse_of: :owner 
 
   has_many :pets,
+    dependent: :destroy,
     through: :owners_pets,
     inverse_of: :owner
 
